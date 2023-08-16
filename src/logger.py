@@ -11,7 +11,11 @@ os.makedirs(logs_path, exist_ok=True)
 log_file_path = os.path.join(logs_path, LOG_FILE)
 
 logging.basicConfig(
-     filename = LOG_FILE,
+     filename = log_file_path,
      level = logging.INFO,
-     format = '[ %(asctime)s ] %(lineno)d - %(name)s - %(message)s'    
+     format = '[ %(asctime)s ] %(lineno)d - %(name)s - %(levelname)s - %(message)s'    
 )
+
+
+if __name__ == '__main__':
+    logging.error('Test')
